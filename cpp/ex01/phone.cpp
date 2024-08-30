@@ -1,41 +1,53 @@
 #include "phonebook.hpp"
 
+phonebook::phonebook()
+{
+    index = 0;
+    std::cout << "          Welcome :D\n";
+}
 
 void    phonebook::add_contact()
 {
     std::string input;
 
-    if (this->index > 7)
+    if (index > 7)
     {
+        std::cout << "you reach the limit of 8 contacts, by adding the next one you gonna overwrite the first one\n";
         index = 0;
     }
     std::cout << "please enter the first name:\n";
     std::cin >> input;
-    this->contacts[index].setfname(input);
+    contacts[index].setfname(input);
 
     std::cout << "please enter the last name:\n";
     std::cin >> input;
-    this->contacts[index].setlname(input);
+    contacts[index].setlname(input);
 
     std::cout << "please enter the number phone:\n";
     std::cin >> input;
-    this->contacts[index].setnumber(input);
+    contacts[index].setnumber(input);
 
     std::cout << "please enter the nick name:\n";
     std::cin >> input;
-    this->contacts[index].setnname(input);
+    contacts[index].setnname(input);
 
     std::cout << "please enter the dark secret:\n";
     std::cin >> input;
-    this->contacts[index].setsecret(input);
+    contacts[index].setsecret(input);
 
-    this->index++;
+    index++;
 }
 
 std::string fixoutput(std::string str)
 {
     int n = str.length();
-    
+
+    if (n > 10)
+    {
+        while (str.length() > 10)
+            str.pop_back();
+        str[str.length() - 1] = '.';
+    }    
     while (n < 10)
     {
         str += ' ';
@@ -48,8 +60,8 @@ void    phonebook::contactdisplay(std::string index)
 {
     contact *tmp = this->contacts;
 
-    std::cout << "FirstName  LastName  NickName  number  DarkSecret\n";
-    std::cout << "---------------------------------------------------------------------\n";
+    std::cout << "FirstName  LastName   NickName   number     DarkSecret\n";
+    std::cout << "----------------------------------------------------------------\n";
     std::cout << fixoutput(tmp[index[0] - '0' - 1].getfname()) + '|';
     std::cout << fixoutput(tmp[index[0] - '0' - 1].getlname()) + '|';
     std::cout << fixoutput(tmp[index[0] - '0' - 1].getnname()) + '|';
@@ -77,6 +89,7 @@ int main()
 {
     std::string input;
     phonebook   phone;
+
 
     while (input.compare("EXIT"))
     {

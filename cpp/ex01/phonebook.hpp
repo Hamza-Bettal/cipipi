@@ -9,6 +9,7 @@ class phonebook
         int     index;
 
     public :
+        phonebook();
         void    add_contact();
         void    search_incontact();
         void    contactdisplay(std::string index);
