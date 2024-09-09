@@ -14,5 +14,5 @@ int main()
     
     cout << "\n\n========= Value =========\n" << endl;
     cout << "stringPTR value: " << stringPTR << endl;
-    cout << "stringREF value: " << stringREF << endl;   
+    cout << "stringREF value: " << stringREF << endl;
 }
