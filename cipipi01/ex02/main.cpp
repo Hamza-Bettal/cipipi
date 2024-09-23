@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     string stringPTR = "HI THIS IS BRAIN";
-    string stringREF = stringPTR;
+    string &stringREF = stringPTR;
 
     cout << "====== Memory address =======\n" << endl;
     cout << "stringPTR memory address: " << &stringPTR << endl;
