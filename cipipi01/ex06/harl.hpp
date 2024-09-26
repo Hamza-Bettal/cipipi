@@ -10,7 +10,6 @@ class Harl
 
     public :
         void complain(std::string level);
-        ~Harl();
 };
 
 typedef void (Harl::*function_ptr)();

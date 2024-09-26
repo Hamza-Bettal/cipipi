@@ -16,35 +16,34 @@ int    getLevel(string level)
         return (-1);
 }
 
-Harl::~Harl()
-{
-    cout << "good by madarfakaar\n";
-}
-
 void    Harl::complain(string level)
 {
     function_ptr    function[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     int             lvl = getLevel(level);
 
     if (lvl < 0)
-        cout << "anvalid level" << endl;
+        cout << "[ Probably complaining about insignificant problems ]" << endl;
     else
         (this->*(function[lvl]))();
 }
 
 void    Harl::debug()
 {
-    cout << "3ndk error wlkin hanya a3chiry ana n9ado lik ;)" << endl;
+    cout << "I’ve been tracking the response times of our application, and it seems like the \
+database queries are taking longer than expected during peak usage." << endl;
 }
 void    Harl::info()
 {
-    cout << "3ndk error wlkin hanya a3chiry rah sahl bach t9ado" << endl;
+    cout << "During my last review of the system logs, I found several instances of successful \
+logins from new devices. This might indicate some account sharing." << endl;
 }
 void    Harl::warning()
 {
-    cout << "wakhuya ra chwiya o nbda nsb 9ad had error" << endl;
+    cout << "It appears that some users are experiencing intermittent connectivity issues. \
+While they can still use the service, it may frustrate them if it continues." << endl;
 }
 void    Harl::error()
 {
-    cout << "m3ndk ta wza s7i7a kolchy ghalat in3lbok" << endl;
+    cout << "I just received an alert that the server is down. This is a major issue, and \
+we need to address it immediately to avoid downtime!" << endl;
 }
