@@ -1,45 +1,40 @@
 #include "harl.hpp"
 
-using namespace std;
-
-int    getLevel(string level)
+void    Harl::complain(std::string level)
 {
-    if (!level.compare("DEBUG"))
-        return (0);
-    else if (!level.compare("INFO"))
-        return (1);
-    else if (!level.compare("WARNING"))
-        return (2);
-    else if (!level.compare("ERROR"))
-        return (3);
-    else
-        return (-1);
-}
+	function_ptr	function[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	std::string		lvl[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	unsigned long 	i = 0;
 
-void    Harl::complain(string level)
-{
-    function_ptr    function[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-    int             lvl = getLevel(level);
-
-    if (lvl < 0)
-        cout << "anvalid level" << endl;
-    else
-        (this->*(function[lvl]))();
+	while (i < lvl[i].length())
+	{
+		if (!lvl[i].compare(level))
+			break ;
+		i++;
+	}
+	if (i < 4)
+		(this->*(function[i]))();
+	else
+		std::cout << "invalid level" << std::endl;
 }
 
 void    Harl::debug()
 {
-    cout << "3ndk error wlkin hanya a3chiry ana n9ado lik ;)" << endl;
+    std::cout << "I’ve been tracking the response times of our application, and it seems like the \
+database queries are taking longer than expected during peak usage." << std::endl;
 }
 void    Harl::info()
 {
-    cout << "3ndk error wlkin hanya a3chiry rah sahl bach t9ado" << endl;
+    std::cout << "During my last review of the system logs, I found several instances of successful \
+logins from new devices. This might indicate some account sharing." << std::endl;
 }
 void    Harl::warning()
 {
-    cout << "wakhuya ra chwiya o nbda nsb 9ad had error" << endl;
+    std::cout << "It appears that some users are experiencing intermittent connectivity issues. \
+While they can still use the service, it may frustrate them if it continues." << std::endl;
 }
 void    Harl::error()
 {
-    cout << "m3ndk ta wza s7i7a kolchy ghalat in3lbok" << endl;
+    std::cout << "I just received an alert that the server is down. This is a major issue, and \
+we need to address it immediately to avoid downtime!" << std::endl;
 }

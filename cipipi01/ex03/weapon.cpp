@@ -11,7 +11,5 @@ void    Weapon::setType(std::string newType)
 
 std::string Weapon::getType()
 {
-    std::string typeref = this->type;
-    
-    return (typeref);
+    return (this->type);
 }

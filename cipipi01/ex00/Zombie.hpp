@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 09:17:12 by hbettal           #+#    #+#             */
-/*   Updated: 2024/09/23 09:17:13 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/09/26 21:31:32 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Zombie
 
     public :
         Zombie(std::string name);
+        ~Zombie();
         void    announce();
 };
 

@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 09:17:14 by hbettal           #+#    #+#             */
-/*   Updated: 2024/09/23 09:17:15 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/09/26 21:34:07 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 Zombie::Zombie(std::string name) : _name(name)
 {
+}
+
+Zombie::~Zombie()
+{
+    std::cout << this->_name << " Detructor called" << std::endl;
 }
 
 void    Zombie::announce()

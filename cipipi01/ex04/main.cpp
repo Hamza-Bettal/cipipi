@@ -1,12 +1,9 @@
-#include <iostream>
 #include <fstream>
 
-using namespace std;
-
-void    replace(string &fileContent, string s1, string s2)
+void    replace(std::string &fileContent, std::string s1, std::string s2)
 {
     int pos = fileContent.find(s1);
-    int i = 0;
+
     while (pos != -1)
     {
         fileContent.erase(pos, s1.length());
@@ -19,14 +16,16 @@ int main(int ac, char **av)
 {
     if (ac == 4)
     {
+        std::ifstream file(av[1]);
+        std::string  fileContent;
+        std::string outName(av[1]);
+        std::string  line;
 
-        ifstream file(av[1]);
-        string  fileContent((istreambuf_iterator<char>(file)), istreambuf_iterator<char>());
-        string outName(av[1]);
-
+        while (std::getline(file, line))
+            fileContent += line + '\n';
         outName += ".replace";
         replace(fileContent, av[2], av[3]);
-        ofstream repFile(outName);
+        std::ofstream repFile(outName);
         repFile << fileContent;
     }
 }
