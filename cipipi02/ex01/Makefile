@@ -1,12 +1,12 @@
-NAME = harlFilter
+NAME = Fixed
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-SRC	=		main.cpp		harl.cpp
+SRC	=	main.cpp		Fixed.cpp
 
 SRC_OBJ = $(SRC:.cpp=.o)
 
@@ -21,8 +21,8 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-%.o: %.cpp harl.hpp
-	$(CC) $(FLAGS) -c $< -o $@
+%.o: %.cpp Fixed.hpp
+	$(CC) $(FLAGS) -c $<
 
 re: fclean all
 

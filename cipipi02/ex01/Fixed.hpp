@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 09:16:55 by hbettal           #+#    #+#             */
-/*   Updated: 2024/10/26 12:09:48 by hbettal          ###   ########.fr       */
+/*   Created: 2024/10/26 22:57:33 by hbettal           #+#    #+#             */
+/*   Updated: 2024/10/27 13:37:07 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
 #include <iostream>
 
-class Zombie
+class Fixed 
 {
-    private :
-        std::string _name;
-
-    public :
-
-        void    announce();
-        void    setname(std::string name);
+	private :
+		int					number;
+		static const int	bits = 8;
+	public :
+		Fixed( void );
+		Fixed( int raw );
+		Fixed( float raw );
+		Fixed( const Fixed &other );
+		Fixed &operator=( const Fixed &other );
+		~Fixed();
+		int     getRawBits( void ) const;
+		void    setRawBits( int const raw);
+		float   toFloat( void ) const;
+		int     toInt( void ) const;
 };
 
-Zombie  *ZombieHorde(int N, std::string name);
+std::ostream &operator<<( std::ostream &out, const Fixed &other );

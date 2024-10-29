@@ -2,7 +2,7 @@
 
 void    Harl::complain(std::string level)
 {
-	function_ptr	function[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	void (Harl::*function_ptr[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string		lvl[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	unsigned long 	i = 0;
 
@@ -13,28 +13,35 @@ void    Harl::complain(std::string level)
 		i++;
 	}
 	if (i < 4)
-		(this->*(function[i]))();
+		(this->*(function_ptr[i]))();
 	else
 		std::cout << "invalid level" << std::endl;
 }
 
 void    Harl::debug()
 {
-    std::cout << "I’ve been tracking the response times of our application, and it seems like the \
-database queries are taking longer than expected during peak usage." << std::endl;
+	std::cout << "[ DEBUG ]\n";
+    std::cout << "I've been tracking the response times of our application, and it seems like the \
+database queries are taking longer than expected during peak usage.\n\n";
 }
+
 void    Harl::info()
 {
+	std::cout << "[ INFO ]\n";
     std::cout << "During my last review of the system logs, I found several instances of successful \
-logins from new devices. This might indicate some account sharing." << std::endl;
+logins from new devices. This might indicate some account sharing.\n\n";
 }
+
 void    Harl::warning()
 {
+	std::cout << "[ WARNING ]\n";
     std::cout << "It appears that some users are experiencing intermittent connectivity issues. \
-While they can still use the service, it may frustrate them if it continues." << std::endl;
+While they can still use the service, it may frustrate them if it continues.\n\n";
 }
+
 void    Harl::error()
 {
+	std::cout << "[ ERROR ]\n";
     std::cout << "I just received an alert that the server is down. This is a major issue, and \
-we need to address it immediately to avoid downtime!" << std::endl;
+we need to address it immediately to avoid downtime!\n";
 }

@@ -22,10 +22,17 @@ int main(int ac, char **av)
         std::string  line;
 
         while (std::getline(file, line))
-            fileContent += line + '\n';
+        {
+            if (!file.eof())
+                fileContent += line + '\n';
+            else
+                fileContent += line;
+        }
+        file.close();
         outName += ".replace";
         replace(fileContent, av[2], av[3]);
         std::ofstream repFile(outName);
         repFile << fileContent;
+        repFile.close();
     }
 }

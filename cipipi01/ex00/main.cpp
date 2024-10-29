@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 09:17:05 by hbettal           #+#    #+#             */
-/*   Updated: 2024/09/26 21:37:44 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/10/03 14:43:56 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
 
     Zombie *heapZombie = newZombie("BoB");
     heapZombie->announce();
-    delete(heapZombie);
+    delete heapZombie;
 
     std::cout << "\n\n=====stack example=====\n";
     randomChump("machi BoB");

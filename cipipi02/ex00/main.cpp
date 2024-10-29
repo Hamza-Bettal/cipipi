@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 09:17:14 by hbettal           #+#    #+#             */
-/*   Updated: 2024/10/03 14:41:49 by hbettal          ###   ########.fr       */
+/*   Created: 2024/09/29 11:38:40 by hbettal           #+#    #+#             */
+/*   Updated: 2024/10/27 13:21:08 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Fixed.hpp"
 
-Zombie::Zombie(std::string name) : _name(name)
+int main()
 {
-}
+    Fixed a;
+    Fixed b( a );
+    Fixed c;
 
-Zombie::~Zombie()
-{
-    std::cout << this->_name << " Detructor called" << std::endl;
+    c = b;
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
+    return 0;
 }
-
-void    Zombie::announce()
-{
-    std::cout << _name + ": BraiiiiiiinnnzzzZ...";
-    std::cout << std::endl;
-}
-

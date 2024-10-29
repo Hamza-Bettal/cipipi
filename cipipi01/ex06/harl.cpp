@@ -1,49 +1,63 @@
 #include "harl.hpp"
 
-using namespace std;
-
-int    getLevel(string level)
+int     getlevel(std::string level)
 {
-    if (!level.compare("DEBUG"))
-        return (0);
-    else if (!level.compare("INFO"))
-        return (1);
-    else if (!level.compare("WARNING"))
-        return (2);
-    else if (!level.compare("ERROR"))
-        return (3);
-    else
-        return (-1);
+	std::string		lvl[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int 	i = 0;
+
+	while (i < 4)
+	{
+		if (!lvl[i].compare(level))
+			break ;
+		i++;
+	}
+	return (i);
 }
 
-void    Harl::complain(string level)
+void    Harl::complain(std::string level)
 {
-    function_ptr    function[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-    int             lvl = getLevel(level);
+	int lvl = getlevel(level);
 
-    if (lvl < 0)
-        cout << "[ Probably complaining about insignificant problems ]" << endl;
-    else
-        (this->*(function[lvl]))();
+    switch (lvl)
+    {
+        case 0:
+            this->debug();
+        case 1:
+            this->info();
+        case 2:
+            this->warning();
+        case 3:
+            this->error();
+            break;
+        default:
+            std::cout << "invalid level" << std::endl;
+    }
 }
 
 void    Harl::debug()
 {
-    cout << "I’ve been tracking the response times of our application, and it seems like the \
-database queries are taking longer than expected during peak usage." << endl;
+	std::cout << "[ DEBUG ]\n";
+    std::cout << "I've been tracking the response times of our application, and it seems like the \
+database queries are taking longer than expected during peak usage.\n\n";
 }
+
 void    Harl::info()
 {
-    cout << "During my last review of the system logs, I found several instances of successful \
-logins from new devices. This might indicate some account sharing." << endl;
+	std::cout << "[ INFO ]\n";
+    std::cout << "During my last review of the system logs, I found several instances of successful \
+logins from new devices. This might indicate some account sharing.\n\n";
 }
+
 void    Harl::warning()
 {
-    cout << "It appears that some users are experiencing intermittent connectivity issues. \
-While they can still use the service, it may frustrate them if it continues." << endl;
+	std::cout << "[ WARNING ]\n";
+    std::cout << "It appears that some users are experiencing intermittent connectivity issues. \
+While they can still use the service, it may frustrate them if it continues.\n\n";
 }
+
 void    Harl::error()
 {
-    cout << "I just received an alert that the server is down. This is a major issue, and \
-we need to address it immediately to avoid downtime!" << endl;
+	std::cout << "[ ERROR ]\n";
+    std::cout << "I just received an alert that the server is down. This is a major issue, and \
+we need to address it immediately to avoid downtime!\n";
 }

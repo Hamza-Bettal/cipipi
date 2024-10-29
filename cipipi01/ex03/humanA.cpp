@@ -2,6 +2,7 @@
 
 HumanA::HumanA(std::string str, Weapon &gun) : name(str), weapon(gun)
 {
+    
 }
 
 void    HumanA::attack()

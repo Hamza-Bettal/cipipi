@@ -6,15 +6,11 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 09:16:58 by hbettal           #+#    #+#             */
-/*   Updated: 2024/09/23 09:16:59 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/10/26 12:09:42 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-
-Zombie::Zombie()
-{
-}
 
 void    Zombie::setname(std::string name)
 {

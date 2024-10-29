@@ -1,7 +1,0 @@
-C++ provides an in-built method to find if a string contains another string or not. The method used for the purpose is called the std::string.find() method. It is very often used to find the occurrence of a string within another string. 
-
-This method is a member function of the C++ string class, i.e., std::string. Therefore the header file <string> must be included in the code to use C++ string find().
-
-The find() function returns the index of the first occurrence of the substring in the original string. We can define the starting position for the original string. By default, the starting position is taken as 0.
-
-C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++C++

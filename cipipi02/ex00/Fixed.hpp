@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 09:17:14 by hbettal           #+#    #+#             */
-/*   Updated: 2024/10/03 14:41:49 by hbettal          ###   ########.fr       */
+/*   Created: 2024/09/29 11:39:25 by hbettal           #+#    #+#             */
+/*   Updated: 2024/10/27 13:27:14 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-Zombie::Zombie(std::string name) : _name(name)
+class Fixed 
 {
-}
-
-Zombie::~Zombie()
-{
-    std::cout << this->_name << " Detructor called" << std::endl;
-}
-
-void    Zombie::announce()
-{
-    std::cout << _name + ": BraiiiiiiinnnzzzZ...";
-    std::cout << std::endl;
-}
-
+	private :
+		int number;
+		static const int bits;
+	public :
+		Fixed( void );
+		Fixed( Fixed &other );
+		~Fixed();
+		Fixed &operator=( const Fixed &other );
+		int getRawBits( void ) const;
+		void setRawBits( int const raw );
+};
