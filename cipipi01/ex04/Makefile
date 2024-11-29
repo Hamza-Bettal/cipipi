@@ -1,4 +1,4 @@
-NAME = test
+NAME = program
 
 CC = c++
 
@@ -6,7 +6,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-SRC	=	main.cpp
+SRC	=	main.cpp	Finder.cpp
 
 SRC_OBJ = $(SRC:.cpp=.o)
 
@@ -21,7 +21,7 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp	Finder.hpp
 	$(CC) $(FLAGS) -c $<
 
 re: fclean all

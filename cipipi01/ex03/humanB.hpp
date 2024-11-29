@@ -1,3 +1,5 @@
+#pragma once
+
 #include "humanA.hpp"
 
 class HumanB

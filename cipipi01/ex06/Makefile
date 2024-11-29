@@ -22,7 +22,7 @@ fclean: clean
 	$(RM) $(NAME)
 
 %.o: %.cpp harl.hpp
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -c $<
 
 re: fclean all
 

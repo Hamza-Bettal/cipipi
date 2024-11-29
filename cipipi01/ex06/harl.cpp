@@ -30,7 +30,7 @@ void    Harl::complain(std::string level)
             this->error();
             break;
         default:
-            std::cout << "invalid level" << std::endl;
+            std::cout << "Invalid Level" << std::endl;
     }
 }
 

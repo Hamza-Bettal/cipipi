@@ -8,5 +8,6 @@ int main()
     msg.complain("INFO");
     msg.complain("WARNING");
     msg.complain("ERROR");
+    std::cout << '\n';
     msg.complain("walo~");
 }

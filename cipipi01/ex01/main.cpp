@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 09:17:02 by hbettal           #+#    #+#             */
-/*   Updated: 2024/10/25 14:36:41 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/11/26 18:18:33 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main()
 {
     int i = 5;
-    Zombie *horde = ZombieHorde(i, "7imarayni");
+    Zombie *horde = ZombieHorde(i, "Bob");
 
     std::cout << "exampleee :" << std::endl;
     i = 0;

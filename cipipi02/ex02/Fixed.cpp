@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 22:58:04 by hbettal           #+#    #+#             */
-/*   Updated: 2024/10/29 14:23:15 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/10/30 01:02:49 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,54 @@
 Fixed::Fixed()
 {
 	this->number = 0;
-	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed( const Fixed &other ) : number(other.number)
 {
-	std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed::Fixed( const int raw ) : number(raw << Fixed::bits)
 {
-	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed( const float raw ) : number(raw * pow(2, Fixed::bits))
 {
-	std::cout << "Float constructor called" << std::endl;
+}
+
+Fixed::~Fixed()
+{
+}
+
+Fixed Fixed::min( Fixed &a, Fixed &b)
+{
+	if (a > b)
+		return (b);
+	return (a);
+}
+
+Fixed Fixed::min( const Fixed &a, const Fixed &b)
+{
+	if (a > b)
+		return (b);
+	return (a);
+}
+
+Fixed Fixed::max( Fixed &a, Fixed &b)
+{
+	if (a < b)
+		return (b);
+	return (a);
+}
+
+Fixed Fixed::max( const Fixed &a, const Fixed &b)
+{
+	if (a < b)
+		return (b);
+	return (a);
 }
 
 Fixed &Fixed::operator=( const Fixed &other )
 {
-	std::cout << "Copy assignment operator called" << std::endl;
 	this->number = other.number;
 	return (*this);
 }
@@ -90,20 +117,20 @@ Fixed &Fixed::operator-( const Fixed &other )
 
 Fixed &Fixed::operator*( const Fixed &other )
 {
-	this->number *= other.number;
+	this->number *= other.toFloat();
 	return (*this);
 }
 
 Fixed &Fixed::operator/( const Fixed &other )
 {
-	this->number /= other.number;
+	this->number /= other.toFloat();
 	return (*this);
 }
 
-Fixed Fixed::operator++( int num )
+Fixed Fixed::operator++( int )
 {
 	Fixed tmp = *this;
-	this->number += num;
+	this->number += 1;
 	return (tmp);
 }
 
@@ -113,10 +140,10 @@ Fixed &Fixed::operator++()
 	return (*this);
 }
 
-Fixed Fixed::operator--( int num )
+Fixed Fixed::operator--( int )
 {
 	Fixed tmp = *this;
-	this->number -= num;
+	this->number -= 1;
 	return (tmp);
 }
 
@@ -126,11 +153,6 @@ Fixed &Fixed::operator--()
 	return (*this);
 }
 
-Fixed::~Fixed()
-{
-	std::cout << "Destructor called" << std::endl;
-}
-
 int Fixed::getRawBits() const
 {
 	return (this->number);
@@ -138,7 +160,6 @@ int Fixed::getRawBits() const
 
 void Fixed::setRawBits( int const raw )
 {
-	std::cout << "setRawBits member function called" << std::endl;
 	this->number = raw;
 }
 

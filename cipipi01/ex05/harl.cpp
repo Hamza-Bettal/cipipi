@@ -15,7 +15,7 @@ void    Harl::complain(std::string level)
 	if (i < 4)
 		(this->*(function_ptr[i]))();
 	else
-		std::cout << "invalid level" << std::endl;
+		std::cout << "Invalid Level" << std::endl;
 }
 
 void    Harl::debug()
