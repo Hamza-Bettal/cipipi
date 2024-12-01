@@ -6,11 +6,12 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:39:03 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/26 14:02:53 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/01 14:57:31 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include "Brain.hpp"
 
 Cat::Cat() : Animal()
 {
@@ -26,6 +27,7 @@ Cat::Cat( Cat &other ) : Animal( other )
 Cat &Cat::operator=( Cat &other )
 {
     this->type = other.type;
+    this->idea = new Brain(*other.idea);
     std::cout << "Copy Assignment Operator of Cat Called\n";
     return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:22:07 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/26 14:04:15 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/01 14:55:24 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Dog::Dog( Dog &other ) : Animal( other )
 Dog &Dog::operator=( Dog &other )
 {
     this->type = other.type;
-    this->idea = other.idea;
+    this->idea = new Brain(*other.idea);
     std::cout << "Copy Assignment Operator of Dog Called\n";
     return (*this);
 }
