@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 15:05:23 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/27 15:40:31 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/11/30 13:29:09 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class AMateria
         AMateria &operator=( AMateria &other );
         
         std::string const &getType( void ) const;
+
         virtual AMateria* clone( void ) const = 0;
-        virtual void use(ICharacter& target);
+        virtual void use(ICharacter& target) = 0;
 };

@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 09:17:02 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/29 15:30:48 by hbettal          ###   ########.fr       */
+/*   Created: 2024/11/30 14:58:17 by hbettal           #+#    #+#             */
+/*   Updated: 2024/11/30 15:00:46 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "AMateria.hpp"
 
-int main()
+class IMateriaSource
 {
-    int i = 5;
-    int j = 0;
-    Zombie *horde = ZombieHorde(i, "Bob");
-
-    std::cout << "exampleee :" << std::endl;
-    while (j < i)
-    {
-        horde[j].announce();
-        j++;
-    }
-    delete[] horde;
-}
+    public:
+    virtual ~IMateriaSource() {}
+    virtual void learnMateria(AMateria*) = 0;
+    virtual AMateria* createMateria(std::string const & type) = 0;
+};

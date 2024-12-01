@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:24:02 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/26 14:02:36 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/11/30 16:18:47 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ Animal::Animal( Animal &other ) : type(other.type)
 
 Animal &Animal::operator=( Animal &other )
 {
+    if (this == &other)
+        return *this;
     this->type = other.type;
+    this->idea = other.idea;
     std::cout << "Copy Assignment Operator of Animal Called\n";
     return (*this);
 }

@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 09:17:02 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/29 15:30:48 by hbettal          ###   ########.fr       */
+/*   Created: 2024/11/30 13:17:11 by hbettal           #+#    #+#             */
+/*   Updated: 2024/11/30 13:19:39 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Cure.hpp"
+#include "AMateria.hpp"
 
-int main()
+Cure::Cure() : AMateria("cure")
 {
-    int i = 5;
-    int j = 0;
-    Zombie *horde = ZombieHorde(i, "Bob");
+}
 
-    std::cout << "exampleee :" << std::endl;
-    while (j < i)
-    {
-        horde[j].announce();
-        j++;
-    }
-    delete[] horde;
+Cure::Cure( Cure &other ) : AMateria(other)
+{
+}
+
+Cure::~Cure()
+{
+}
+
+Cure &Cure::operator=( Cure &other )
+{
+	return (other);
+}
+
+AMateria *Cure::clone( void ) const
+{
+	return (new Cure());
+}
+
+void Cure::use(ICharacter &target)
+{
+	std::cout << "heals " << target.getName() << "’s wounds\n";
 }

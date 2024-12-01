@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 09:17:02 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/29 15:30:48 by hbettal          ###   ########.fr       */
+/*   Created: 2024/11/30 13:30:55 by hbettal           #+#    #+#             */
+/*   Updated: 2024/11/30 13:41:51 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
 
-int main()
+#include "ICharacter.hpp"
+
+class   Character : ICharacter
 {
-    int i = 5;
-    int j = 0;
-    Zombie *horde = ZombieHorde(i, "Bob");
+    private:
+        std::string name;
+        AMateria    *items[4];
 
-    std::cout << "exampleee :" << std::endl;
-    while (j < i)
-    {
-        horde[j].announce();
-        j++;
-    }
-    delete[] horde;
-}
+    public:
+        std::string const   &getName() const;
+        void                equip(AMateria* m);
+        void                unequip(int idx);
+        void                use(int idx, ICharacter& target);    
+};

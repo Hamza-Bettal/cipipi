@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 15:09:16 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/27 15:29:30 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/11/30 13:11:57 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ class Ice : public AMateria
 
         Ice &operator=( Ice &other );
         
-        AMateria* clone( void ) const;
+        AMateria*   clone( void ) const;
+        void        use(ICharacter &target);
 };

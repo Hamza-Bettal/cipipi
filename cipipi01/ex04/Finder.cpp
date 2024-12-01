@@ -1,19 +1,17 @@
 #include "Finder.hpp"
-#include <cstddef>
+#include <string>
 
 void    replace(std::string &fileContent, std::string s1, std::string s2)
 {
-    int pos;
-    size_t i = 0;
-    if (!s1.compare(s2))
+    int     pos = 0;
+
+    if (s1.empty())
         return ;
-    pos = fileContent.find(s1);
-    while (pos != -1 && i < fileContent.length())
+    while ((pos = fileContent.find(s1, pos)) != -1)
     {
         fileContent.erase(pos, s1.length());
         fileContent.insert(pos, s2);
-        pos = fileContent.find(s1);
-        i += s2.length();
+        pos += s2.length();
     }
 }
 
