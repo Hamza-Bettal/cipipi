@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 11:39:25 by hbettal           #+#    #+#             */
-/*   Updated: 2024/10/30 01:16:43 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/04 15:54:15 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ class Fixed
 		Fixed( void );
 		Fixed( Fixed &other );
 		~Fixed();
+		
 		Fixed &operator=( const Fixed &other );
+		
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 };

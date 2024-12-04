@@ -9,13 +9,13 @@ void    Harl::complain(std::string level)
 	while (i < lvl[i].length())
 	{
 		if (!lvl[i].compare(level))
-			break ;
+		{
+			(this->*(function_ptr[i]))();
+			return ;
+		}
 		i++;
 	}
-	if (i < 4)
-		(this->*(function_ptr[i]))();
-	else
-		std::cout << "Invalid Level" << std::endl;
+	std::cout << "Invalid Level" << std::endl;
 }
 
 void    Harl::debug()

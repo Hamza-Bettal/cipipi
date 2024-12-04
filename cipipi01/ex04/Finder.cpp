@@ -22,6 +22,11 @@ void    fill_file(char **av)
     std::string     outName(av[1]);
     std::string     line;
 
+    if (!file.is_open())
+    {
+        std::cout << "infile is not open\n";
+        return ;
+    }
     while (std::getline(file, line))
     {
         if (!file.eof())
@@ -32,7 +37,12 @@ void    fill_file(char **av)
     file.close();
     outName += ".replace";
     replace(fileContent, av[2], av[3]);
-    std::ofstream repFile(outName);
+    std::ofstream repFile(outName.c_str());
+    if (!repFile.is_open())
+    {
+        std::cout << "outfile is not open\n";
+        return ;
+    }
     repFile << fileContent;
     repFile.close();
 }

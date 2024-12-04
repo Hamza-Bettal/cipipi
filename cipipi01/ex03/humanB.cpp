@@ -1,11 +1,11 @@
 #include "humanB.hpp"
 #include "humanA.hpp"
 
-HumanB::HumanB() : name("default"), weapon(NULL)
+HumanB::HumanB() : weapon(NULL), name("default")
 {
 }
 
-HumanB::HumanB(std::string newName) : name(newName), weapon(NULL)
+HumanB::HumanB(std::string newName) : weapon(NULL), name(newName)
 {
 }
 
