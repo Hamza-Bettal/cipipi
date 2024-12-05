@@ -6,13 +6,14 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 22:57:33 by hbettal           #+#    #+#             */
-/*   Updated: 2024/10/30 01:16:39 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/04 19:14:26 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include <cmath>
 
 class Fixed 
 {

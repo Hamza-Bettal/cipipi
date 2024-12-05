@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 22:57:33 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/26 14:13:09 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/05 17:50:26 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Fixed
 		int					number;
 		static const int	bits = 8;
 	public :
-		// constructor / Destructor
+		// Constructor / Destructor
 		Fixed( void );
 		Fixed( int raw );
 		Fixed( float raw );
@@ -46,10 +46,10 @@ class Fixed
 		Fixed	operator--( int );
 		Fixed	&operator--( void );
 		// min / max
-		static	Fixed	min( Fixed &a, Fixed &b );
-		static	Fixed	min( const Fixed &a, const Fixed &b );
-		static	Fixed	max( Fixed &a, Fixed &b );
-		static	Fixed	max( const Fixed &a, const Fixed &b );
+		static	Fixed	&min( Fixed &a, Fixed &b );
+		static	const Fixed	&min( const Fixed &a, const Fixed &b );
+		static	Fixed	&max( Fixed &a, Fixed &b );
+		static	const Fixed	&max( const Fixed &a, const Fixed &b );
 		// getters / setters
 		int     getRawBits( void ) const;
 		void    setRawBits( int const raw);

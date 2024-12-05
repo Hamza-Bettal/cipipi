@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 22:58:04 by hbettal           #+#    #+#             */
-/*   Updated: 2024/10/30 01:02:49 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/05 17:38:54 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Fixed::Fixed( const int raw ) : number(raw << Fixed::bits)
 {
 }
 
-Fixed::Fixed( const float raw ) : number(raw * pow(2, Fixed::bits))
+Fixed::Fixed( const float raw ) : number(raw * (1 << Fixed::bits))
 {
 }
 
@@ -33,28 +33,28 @@ Fixed::~Fixed()
 {
 }
 
-Fixed Fixed::min( Fixed &a, Fixed &b)
+Fixed &Fixed::min( Fixed &a, Fixed &b)
 {
 	if (a > b)
 		return (b);
 	return (a);
 }
 
-Fixed Fixed::min( const Fixed &a, const Fixed &b)
+const Fixed &Fixed::min( const Fixed &a, const Fixed &b)
 {
 	if (a > b)
 		return (b);
 	return (a);
 }
 
-Fixed Fixed::max( Fixed &a, Fixed &b)
+Fixed &Fixed::max( Fixed &a, Fixed &b)
 {
 	if (a < b)
 		return (b);
 	return (a);
 }
 
-Fixed Fixed::max( const Fixed &a, const Fixed &b)
+const Fixed &Fixed::max( const Fixed &a, const Fixed &b)
 {
 	if (a < b)
 		return (b);
@@ -149,7 +149,7 @@ Fixed Fixed::operator--( int )
 
 Fixed &Fixed::operator--()
 {
-	this->number += 1;
+	this->number -= 1;
 	return (*this);
 }
 
@@ -165,10 +165,10 @@ void Fixed::setRawBits( int const raw )
 
 float Fixed::toFloat() const
 {
-    return (this->number) / pow(2, this->bits);
+    return ((float)this->number / (1 << Fixed::bits));
 }
 
 int Fixed::toInt() const
 {
-    return (number / pow(2, this->bits));
+    return (number / (1 << Fixed::bits));
 }

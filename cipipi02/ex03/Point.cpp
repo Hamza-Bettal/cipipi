@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 01:08:55 by hbettal           #+#    #+#             */
-/*   Updated: 2024/10/31 21:05:28 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/05 17:48:17 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ Point &Point::operator=( const Point &other )
 
 Fixed Point::getX()
 {
-	return (_x);
+	return (this->_x);
 }
 
 Fixed Point::getY()
 {
-	return (_y);
+	return (this->_y);
 }
 
 float   area( Point a, Point b, Point c )

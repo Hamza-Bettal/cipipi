@@ -6,15 +6,14 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 22:58:04 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/26 14:13:09 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/05 17:16:40 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed()
+Fixed::Fixed() : number(0)
 {
-	this->number = 0;
 	std::cout << "Default constructor called" << std::endl;
 }
 
@@ -23,12 +22,12 @@ Fixed::Fixed( const Fixed &other ) : number(other.number)
 	std::cout << "Copy constructor called" << std::endl;
 }
 
-Fixed::Fixed( const int raw ) : number(raw << Fixed::bits)
+Fixed::Fixed( const int raw ) : number(raw  << Fixed::bits)
 {
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed( const float raw ) : number(raw * pow(2, Fixed::bits))
+Fixed::Fixed( const float raw ) : number(raw * (1 << Fixed::bits))
 {
 	std::cout << "Float constructor called" << std::endl;
 }
@@ -64,10 +63,10 @@ void Fixed::setRawBits( int const raw )
 
 float Fixed::toFloat() const
 {
-    return (this->number) / pow(2, this->bits);
+    return ((float)this->number / (1 << Fixed::bits));
 }
 
 int Fixed::toInt() const
 {
-    return (number / pow(2, this->bits));
+    return (this->number / (1 << Fixed::bits));
 }
