@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 01:08:48 by hbettal           #+#    #+#             */
-/*   Updated: 2024/12/05 17:46:55 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/07 01:55:29 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ class Point
 		~Point();
 		
 		Point	&operator=( const Point &other );
+		bool	operator==( const Point &other ) const;
 		
-		Fixed	getX();
-		Fixed	getY();
+		Fixed	getX() const;
+		Fixed	getY() const;
 };
 
 bool bsp( Point const a, Point const b, Point const c, Point const point );

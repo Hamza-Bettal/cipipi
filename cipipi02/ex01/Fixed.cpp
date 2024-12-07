@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 22:58:04 by hbettal           #+#    #+#             */
-/*   Updated: 2024/12/05 17:16:40 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/07 01:35:33 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ Fixed::Fixed( const Fixed &other ) : number(other.number)
 	std::cout << "Copy constructor called" << std::endl;
 }
 
-Fixed::Fixed( const int raw ) : number(raw  << Fixed::bits)
+Fixed::Fixed( const int raw ) : number(roundf(raw << Fixed::bits))
 {
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed( const float raw ) : number(raw * (1 << Fixed::bits))
+Fixed::Fixed( const float raw ) : number(roundf(raw * (1 << Fixed::bits)))
 {
 	std::cout << "Float constructor called" << std::endl;
 }

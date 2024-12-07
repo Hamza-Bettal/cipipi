@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 22:58:04 by hbettal           #+#    #+#             */
-/*   Updated: 2024/12/05 17:38:54 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/07 02:07:37 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ Fixed::Fixed( const Fixed &other ) : number(other.number)
 {
 }
 
-Fixed::Fixed( const int raw ) : number(raw << Fixed::bits)
+Fixed::Fixed( const int raw ) : number(roundf(raw << Fixed::bits))
 {
 }
 
-Fixed::Fixed( const float raw ) : number(raw * (1 << Fixed::bits))
+Fixed::Fixed( const float raw ) : number(roundf(raw * (1 << Fixed::bits)))
 {
 }
 
@@ -103,28 +103,36 @@ bool Fixed::operator!=( const Fixed &other ) const
 	return (this->number != other.number);
 }
 
-Fixed &Fixed::operator+( const Fixed &other )
+Fixed Fixed::operator+( const Fixed &other )
 {
-	this->number += other.number;
-	return (*this);
+	Fixed	tmp = *this;
+	
+	tmp.number += other.number;
+	return (tmp);
 }
 
-Fixed &Fixed::operator-( const Fixed &other )
+Fixed Fixed::operator-( const Fixed &other )
 {
-	this->number -= other.number;
-	return (*this);
+	Fixed	tmp = *this;
+	
+	tmp.number -= other.number;
+	return (tmp);
 }
 
-Fixed &Fixed::operator*( const Fixed &other )
+Fixed Fixed::operator*( const Fixed &other )
 {
-	this->number *= other.toFloat();
-	return (*this);
+	Fixed	tmp = *this;
+	
+	tmp.number *= other.toFloat();
+	return (tmp);
 }
 
-Fixed &Fixed::operator/( const Fixed &other )
+Fixed Fixed::operator/( const Fixed &other )
 {
-	this->number /= other.toFloat();
-	return (*this);
+	Fixed	tmp = *this;
+	
+	tmp.number /= other.toFloat();
+	return (tmp);
 }
 
 Fixed Fixed::operator++( int )

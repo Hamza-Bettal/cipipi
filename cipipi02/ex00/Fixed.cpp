@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 11:38:36 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/26 14:13:09 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/07 01:34:38 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 const int Fixed::bits = 8;
 
-Fixed::Fixed()
+Fixed::Fixed() : number(0)
 {
-	this->number = 0;
 	std::cout << "Default constructor called" << std::endl;
 }
 

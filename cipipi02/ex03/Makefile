@@ -6,7 +6,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 RM = rm -f
 
-SRC	=	main.cpp		Fixed.cpp		Point.cpp
+SRC	=	main.cpp		Fixed.cpp		Point.cpp		bsp.cpp
 
 SRC_OBJ = $(SRC:.cpp=.o)
 
