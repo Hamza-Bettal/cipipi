@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 10:37:31 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/09 23:48:25 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/08 05:25:31 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ FragTrap::FragTrap() : ClapTrap()
 {
 	std::cout << "Default FragTrap Constructor Called\n";
 	this->hitPoint = 100;
-	this->energyPoint = 100;
+	if (this->energyPoint != 50)
+		this->energyPoint = 100;
 	this->attackDamage = 30;
 }
 

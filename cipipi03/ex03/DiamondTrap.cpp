@@ -6,15 +6,12 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 10:19:51 by hbettal           #+#    #+#             */
-/*   Updated: 2024/12/03 16:32:47 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/08 05:23:39 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 #include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
-#include <filesystem>
 
 DiamondTrap::DiamondTrap() : ClapTrap("Diamond_Default_clap_name") , _name("Diamond_Default")
 {
@@ -24,10 +21,9 @@ DiamondTrap::DiamondTrap() : ClapTrap("Diamond_Default_clap_name") , _name("Diam
 	this->attackDamage = FragTrap::attackDamage;
 }
 
-DiamondTrap::DiamondTrap( std::string name ) : ScavTrap(name), FragTrap(name)
+DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name + "_clap_name")
 {
 	std::cout << "DiamondTrap Constructor Called\n";
-	ClapTrap::_name = name + "_clap_name";
 	this->_name = name;
 	this->hitPoint = FragTrap::hitPoint;
 	this->energyPoint = ScavTrap::energyPoint;
