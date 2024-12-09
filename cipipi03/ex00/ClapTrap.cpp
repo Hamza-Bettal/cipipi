@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:32:10 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/09 22:22:43 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/08 22:52:19 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ ClapTrap::ClapTrap( std::string name ) : _name(name), hitPoint(10), energyPoint(
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Deconstractor Called\n";
+	std::cout << "Destructor Called\n";
 }
 
 ClapTrap    &ClapTrap::operator=( ClapTrap &other )
@@ -42,14 +42,14 @@ ClapTrap    &ClapTrap::operator=( ClapTrap &other )
 	return (*this);
 }
 
-void        ClapTrap::attack( const std::string& target )
+void        ClapTrap::attack( const std::string &target )
 {
 	std::cout << "ClapTrap " + _name + " attacks " + target + ", causing " << attackDamage << " point of damage!\n";
 }
 
 void		ClapTrap::takeDamage( unsigned int amount )
 {
-	std::cout << "ClapTrap " + _name + " take " << amount << " point of damage, now the health is " << amount - hitPoint << ".\n";
+	std::cout << "ClapTrap " + _name + " take " << amount << " point of damage, now the health is " << hitPoint - amount << ".\n";
 }
 
 void		ClapTrap::beRepaired( unsigned int amount )

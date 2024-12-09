@@ -6,12 +6,11 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 10:19:51 by hbettal           #+#    #+#             */
-/*   Updated: 2024/12/08 05:23:39 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/09 13:37:54 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
-#include "ClapTrap.hpp"
 
 DiamondTrap::DiamondTrap() : ClapTrap("Diamond_Default_clap_name") , _name("Diamond_Default")
 {
@@ -51,13 +50,10 @@ DiamondTrap &DiamondTrap::operator=( DiamondTrap &other )
 
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << "DiamondTrap Deconstractor called\n";
+	std::cout << "DiamondTrap Destructor called\n";
 }
 
 void	DiamondTrap::whoAmI()
 {
 	std::cout << "my name is " << this->_name << " and my ClapTrap name is " << ClapTrap::_name << '\n';
-	std::cout << this->hitPoint << '\n';
-	std::cout << this->energyPoint << '\n';
-	std::cout << this->attackDamage << '\n';
 }

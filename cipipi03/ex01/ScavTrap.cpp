@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 02:10:07 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/09 22:26:12 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/08 23:07:36 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ScavTrap::ScavTrap() : ClapTrap()
 
 ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
 {
-	std::cout << "FragTrap Constructor Called\n";
+	std::cout << "ScavTrap Constructor Called\n";
 	this->hitPoint = 100;
 	this->energyPoint = 50;
 	this->attackDamage = 20;
@@ -45,7 +45,7 @@ ScavTrap ScavTrap::operator=( ScavTrap &other )
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap Deconstractor called\n";
+	std::cout << "ScavTrap Destructor Called\n";
 }
 
 void	ScavTrap::attack( const std::string& target )

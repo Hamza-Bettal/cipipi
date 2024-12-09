@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 01:50:28 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/10 10:41:06 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/09 13:22:08 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ class ScavTrap : virtual public ClapTrap
 		ScavTrap( std::string _name );
 		ScavTrap( ScavTrap &other );
 		ScavTrap &operator=( ScavTrap &other );
+		
 		~ScavTrap();
+		
 		void	attack( const std::string& target );
 		void	guardGate( void );
 };

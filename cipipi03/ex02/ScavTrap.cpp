@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 02:10:07 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/08 12:39:00 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/08 22:53:10 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ ScavTrap &ScavTrap::operator=( ScavTrap &other )
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap Deconstractor called\n";
+	std::cout << "ScavTrap Destructor called\n";
 }
 
 void	ScavTrap::attack( const std::string& target )

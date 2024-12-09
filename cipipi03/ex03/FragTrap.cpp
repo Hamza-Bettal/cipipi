@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 10:37:31 by hbettal           #+#    #+#             */
-/*   Updated: 2024/12/08 05:25:31 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/08 22:53:10 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ FragTrap &FragTrap::operator=( FragTrap &other )
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap Deconstractor called\n";
+	std::cout << "FragTrap Destructor called\n";
 }
 
 void	FragTrap::highFivesGuys( void )
