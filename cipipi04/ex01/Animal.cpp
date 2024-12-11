@@ -6,12 +6,11 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:24:02 by hbettal           #+#    #+#             */
-/*   Updated: 2024/12/01 14:59:10 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/11 17:02:22 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-#include "Brain.hpp"
 
 Animal::Animal()
 {
@@ -20,16 +19,20 @@ Animal::Animal()
     std::cout << "Default Contructor of Animal Called\n";
 }
 
-Animal::Animal( Animal &other ) : type(other.type)
+Animal::Animal( const Animal &other )
 {
-    this->idea = new Brain(*other.idea);
+    *this = other;
     std::cout << "Copy Contructor of Animal Called\n";
 }
 
-Animal &Animal::operator=( Animal &other )
+Animal &Animal::operator=( const Animal &other )
 {
-    this->type = other.type;
-    this->idea = new Brain(*other.idea);
+    if (this != &other)
+    {
+        this->type = other.type;
+        delete this->idea;
+        this->idea = new Brain(*other.idea);
+    }
     std::cout << "Copy Assignment Operator of Animal Called\n";
     return (*this);
 }
@@ -37,7 +40,7 @@ Animal &Animal::operator=( Animal &other )
 Animal::~Animal()
 {
     std::cout << "Default Decontructor of Animal Called\n";
-    delete idea;
+    delete this->idea;
 }
 
 std::string Animal::getType() const

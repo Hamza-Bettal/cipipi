@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:14:56 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/26 14:00:32 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/11 05:45:07 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ class Cat : public Animal
 {
     public :
         Cat( void );
-        Cat( Cat &other );
+        Cat( const Cat &other );
         ~Cat();
 
-        Cat &operator=( Cat &other );
+        Cat &operator=( const Cat &other );
 
         void makeSound( void ) const;
 };

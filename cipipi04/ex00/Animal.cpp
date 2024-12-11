@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:24:02 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/26 13:37:45 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/11 16:45:36 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,16 @@ Animal::Animal()
     std::cout << "Default Contructor of Animal Called\n";
 }
 
-Animal::Animal( Animal &other ) : type(other.type)
+Animal::Animal( const Animal &other ) : type(other.type)
 {
     std::cout << "Copy Contructor of Animal Called\n";
 }
 
-Animal &Animal::operator=( Animal &other )
+Animal &Animal::operator=( const Animal &other )
 {
-    this->type = other.type;
     std::cout << "Copy Assignment Operator of Animal Called\n";
+    if (this != &other)
+        this->type = other.type;
     return (*this);
 }
 

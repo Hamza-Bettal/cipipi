@@ -1,4 +1,4 @@
-NAME = Zoo
+NAME = interface
 
 CC = c++
 
@@ -6,7 +6,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-SRC	=	main.cpp	Cat.cpp		Dog.cpp		Animal.cpp
+SRC	=	main.cpp	AMateria.cpp	Cure.cpp	Ice.cpp	MateriaSource.cpp	Character.cpp
 
 SRC_OBJ = $(SRC:.cpp=.o)
 
@@ -21,7 +21,7 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-%.o: %.cpp Cat.hpp Dog.hpp Animal.hpp
+%.o: %.cpp ICharacter.hpp AMateria.hpp Cure.hpp Ice.hpp MateriaSource.hpp Character.hpp
 	$(CC) $(FLAGS) -c $<
 
 re: fclean all

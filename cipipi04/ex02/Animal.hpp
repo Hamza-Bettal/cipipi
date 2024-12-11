@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:07:39 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/26 17:28:17 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/11 17:04:45 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class Animal
     public :
         Animal( void );
         virtual ~Animal();
-        Animal( Animal &other );
+        Animal( const Animal &other );
     
-        Animal &operator=( Animal &other );
+        Animal &operator=( const Animal &other );
 
         std::string     getType() const;
         virtual void    makeSound() const = 0;

@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 22:58:04 by hbettal           #+#    #+#             */
-/*   Updated: 2024/12/07 02:07:37 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/09 15:25:34 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ Fixed Fixed::operator-( const Fixed &other )
 	return (tmp);
 }
 
-Fixed Fixed::operator*( const Fixed &other )
+Fixed Fixed::operator*( const Fixed &other ) // a=1; b=2; a = (a + b) * a
 {
 	Fixed	tmp = *this;
 	

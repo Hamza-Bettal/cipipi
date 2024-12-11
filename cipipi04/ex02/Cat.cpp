@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 10:39:03 by hbettal           #+#    #+#             */
-/*   Updated: 2024/11/26 14:02:53 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/11 17:13:52 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,20 @@ Cat::Cat() : Animal()
     std::cout << "Default Contructor of Cat Called\n";
 }
 
-Cat::Cat( Cat &other ) : Animal( other )
+Cat::Cat( const Cat &other )
 {
+    *this = other;
     std::cout << "Copy Contructor of Cat Called\n";
 }
 
-Cat &Cat::operator=( Cat &other )
+Cat &Cat::operator=( const Cat &other )
 {
-    this->type = other.type;
+    if (this != &other)
+    {
+        this->type = other.type;
+        delete this->idea;
+        this->idea = new Brain(*other.idea);
+    }
     std::cout << "Copy Assignment Operator of Cat Called\n";
     return (*this);
 }
