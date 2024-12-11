@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 14:52:47 by hbettal           #+#    #+#             */
-/*   Updated: 2024/12/11 17:25:43 by hbettal          ###   ########.fr       */
+/*   Updated: 2024/12/11 17:34:57 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,8 @@
 #include "MateriaSource.hpp"
 #include <cstdlib>
 
-void f()
-{
-    system("leaks interface");
-}
 int main()
 {
-    atexit(f);
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
