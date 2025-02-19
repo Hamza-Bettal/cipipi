@@ -5,22 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 22:32:15 by hbettal           #+#    #+#             */
-/*   Updated: 2025/01/12 16:31:09 by hbettal          ###   ########.fr       */
+/*   Created: 2024/12/17 10:59:15 by hbettal           #+#    #+#             */
+/*   Updated: 2025/02/09 16:24:09 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "Form.hpp"
+#include <exception>
 
 int main()
 {
-	ScavTrap b("link");
-	ClapTrap a(b);
-	ClapTrap *c = new ScavTrap("zelda");
+    try
+    {
+        Bureaucrat  b("seller", 100);
+        Form        f("sell form", 100, 50);
 
-	a.attack("zombie");
-	b.attack("enemy");
-	c->attack("test");
+        f.beSigned(b);
+        f.signForm(b);
+        std::cout << f << '\n';
+    }
+    catch (std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
 }

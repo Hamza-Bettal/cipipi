@@ -6,12 +6,11 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:07:02 by hbettal           #+#    #+#             */
-/*   Updated: 2025/02/10 13:04:03 by hbettal          ###   ########.fr       */
+/*   Updated: 2025/02/10 13:04:22 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include <ostream>
 
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(1)
 {

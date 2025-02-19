@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 22:32:15 by hbettal           #+#    #+#             */
-/*   Updated: 2025/01/12 16:31:09 by hbettal          ###   ########.fr       */
+/*   Created: 2025/02/18 20:43:19 by hbettal           #+#    #+#             */
+/*   Updated: 2025/02/18 21:17:22 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
-
-int main()
+template <typename T>
+Array<T>::Array( void ) : data(NULL), size(0)
 {
-	ScavTrap b("link");
-	ClapTrap a(b);
-	ClapTrap *c = new ScavTrap("zelda");
-
-	a.attack("zombie");
-	b.attack("enemy");
-	c->attack("test");
 }
+
+template <typename T>
+Array<T>::Array( unsigned int n ) : data(new T[n]), size(n)
+{
+}
+
+template <typename T>

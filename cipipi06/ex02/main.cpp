@@ -5,22 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 22:32:15 by hbettal           #+#    #+#             */
-/*   Updated: 2025/01/12 16:31:09 by hbettal          ###   ########.fr       */
+/*   Created: 2025/02/13 13:16:41 by hbettal           #+#    #+#             */
+/*   Updated: 2025/02/15 12:25:06 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "Base.hpp"
 
 int main()
 {
-	ScavTrap b("link");
-	ClapTrap a(b);
-	ClapTrap *c = new ScavTrap("zelda");
-
-	a.attack("zombie");
-	b.attack("enemy");
-	c->attack("test");
+    Base *b = generate();
+    
+    identify_from_reference(*b);
+    identify_from_pointer(b);
 }

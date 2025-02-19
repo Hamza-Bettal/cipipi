@@ -5,22 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 22:32:15 by hbettal           #+#    #+#             */
-/*   Updated: 2025/01/12 16:31:09 by hbettal          ###   ########.fr       */
+/*   Created: 2025/02/13 12:48:09 by hbettal           #+#    #+#             */
+/*   Updated: 2025/02/13 12:51:44 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "Serializer.hpp"
 
 int main()
 {
-	ScavTrap b("link");
-	ClapTrap a(b);
-	ClapTrap *c = new ScavTrap("zelda");
+    Data data;
+    data.n = 42;
+    data.s1 = "Hello";
+    data.s2 = "World";
 
-	a.attack("zombie");
-	b.attack("enemy");
-	c->attack("test");
+    uintptr_t raw = Serializer::serialize(&data);
+    Data* ptr = Serializer::deserialize(raw);
+
+    std::cout << ptr->n << std::endl;
+    std::cout << ptr->s1 << std::endl;
+    std::cout << ptr->s2 << std::endl;
+
+    return 0;
 }

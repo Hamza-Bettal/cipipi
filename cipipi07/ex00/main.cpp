@@ -5,22 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 22:32:15 by hbettal           #+#    #+#             */
-/*   Updated: 2025/01/12 16:31:09 by hbettal          ###   ########.fr       */
+/*   Created: 2025/02/16 17:29:47 by hbettal           #+#    #+#             */
+/*   Updated: 2025/02/18 02:47:04 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "whatever.hpp"
 
 int main()
 {
-	ScavTrap b("link");
-	ClapTrap a(b);
-	ClapTrap *c = new ScavTrap("zelda");
+    int a = 2;
+    int b = 3;
 
-	a.attack("zombie");
-	b.attack("enemy");
-	c->attack("test");
+    std::cout << "a = " << a << " b = " << b << std::endl;
+    swap(a, b);
+    std::cout << "a = " << a << " b = " << b << std::endl;
+    std::cout << "min = " << min(a, b) << std::endl;
+    std::cout << "max = " << max(a, b) << std::endl;
+    return 0;
 }

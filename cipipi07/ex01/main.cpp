@@ -5,22 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 22:32:15 by hbettal           #+#    #+#             */
-/*   Updated: 2025/01/12 16:31:09 by hbettal          ###   ########.fr       */
+/*   Created: 2025/02/16 17:29:47 by hbettal           #+#    #+#             */
+/*   Updated: 2025/02/18 19:12:53 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "iter.hpp"
+#include <iostream>
+
+void print(int num)
+{
+    std::cout << num << std::endl;
+}
 
 int main()
 {
-	ScavTrap b("link");
-	ClapTrap a(b);
-	ClapTrap *c = new ScavTrap("zelda");
-
-	a.attack("zombie");
-	b.attack("enemy");
-	c->attack("test");
+    int arr[] = {1, 2, 3, 4, 5, 6};
+    iter(arr, 6, print);
+    return 0;
 }

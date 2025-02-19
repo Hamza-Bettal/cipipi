@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:59:48 by hbettal           #+#    #+#             */
-/*   Updated: 2025/02/10 13:03:33 by hbettal          ###   ########.fr       */
+/*   Updated: 2025/02/10 13:04:33 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 #include <exception>
 #include <iostream>
-#include <ostream>
 #include <string>
+
+class AForm;
 
 class   Bureaucrat
 {
@@ -47,5 +48,6 @@ class   Bureaucrat
 		std::string	getName( void ) const;
 		void		increaseGrade();
 		void		decreaseGrade();
+		void		executeForm(AForm const & form);
 };
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &bureaucrat);

@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 22:32:15 by hbettal           #+#    #+#             */
-/*   Updated: 2025/01/12 16:31:09 by hbettal          ###   ########.fr       */
+/*   Created: 2025/02/16 15:35:48 by hbettal           #+#    #+#             */
+/*   Updated: 2025/02/18 02:53:06 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#pragma once
 
-int main()
+#include <iostream>
+
+template <typename T> void swap(T &a, T &b)
 {
-	ScavTrap b("link");
-	ClapTrap a(b);
-	ClapTrap *c = new ScavTrap("zelda");
-
-	a.attack("zombie");
-	b.attack("enemy");
-	c->attack("test");
+    T tmp = a;
+    a = b;
+    b = tmp;
+}
+template <typename T> T max(T a, T b)
+{
+    return ((a > b) ? a : b);
+}
+template <typename T> T min(T a, T b)
+{
+    return ((a < b) ? a : b);
 }

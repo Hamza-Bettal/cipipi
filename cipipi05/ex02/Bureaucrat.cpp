@@ -6,12 +6,12 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 11:07:02 by hbettal           #+#    #+#             */
-/*   Updated: 2025/02/10 13:04:03 by hbettal          ###   ########.fr       */
+/*   Updated: 2025/02/10 13:04:38 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include <ostream>
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(1)
 {
@@ -75,6 +75,18 @@ void    Bureaucrat::decreaseGrade()
     this->_grade++;
 }
 
+void    Bureaucrat::executeForm(AForm const & form)
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << this->_name << " executes " << form.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << this->_name << " cant execute " << form.getName() << " because " << e.what() << std::endl;
+    }
+}
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &bureaucrat)
 {
     out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << std::endl;

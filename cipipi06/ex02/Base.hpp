@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 22:32:15 by hbettal           #+#    #+#             */
-/*   Updated: 2025/01/12 16:31:09 by hbettal          ###   ########.fr       */
+/*   Created: 2025/02/13 12:54:11 by hbettal           #+#    #+#             */
+/*   Updated: 2025/02/13 13:18:33 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#pragma once
 
-int main()
+#include <iostream>
+
+class Base
 {
-	ScavTrap b("link");
-	ClapTrap a(b);
-	ClapTrap *c = new ScavTrap("zelda");
+    public:
+        virtual ~Base() {};
+};
 
-	a.attack("zombie");
-	b.attack("enemy");
-	c->attack("test");
-}
+class A : public Base
+{
+};
+
+class B : public Base
+{
+};
+
+class C : public Base
+{
+};
+
+Base *generate(void);
+void identify_from_pointer(Base *p);
+void identify_from_reference(Base &p);

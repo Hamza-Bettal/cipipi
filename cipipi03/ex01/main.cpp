@@ -6,16 +6,16 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:32:15 by hbettal           #+#    #+#             */
-/*   Updated: 2024/12/09 14:16:19 by hbettal          ###   ########.fr       */
+/*   Updated: 2025/02/19 08:20:53 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
 int main()
 {
-	ClapTrap *a = new ScavTrap("Jotaro");
+	ClapTrap *s = new ScavTrap("Jotaro");
 			
-	a->attack("Dio");
-	delete a;
+	delete s;
 }

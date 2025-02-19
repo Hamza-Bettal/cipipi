@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 10:59:48 by hbettal           #+#    #+#             */
-/*   Updated: 2025/02/10 13:03:33 by hbettal          ###   ########.fr       */
+/*   Updated: 2025/02/10 13:04:15 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 #include <exception>
 #include <iostream>
-#include <ostream>
 #include <string>
 
 class   Bureaucrat

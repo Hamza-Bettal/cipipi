@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:32:13 by hbettal           #+#    #+#             */
-/*   Updated: 2024/12/08 23:06:52 by hbettal          ###   ########.fr       */
+/*   Updated: 2025/02/19 08:23:42 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ClapTrap
 		ClapTrap();
 		ClapTrap( std::string name );
 		ClapTrap( ClapTrap &other );
-		virtual ~ClapTrap( void );
+		~ClapTrap( void );
 		
 		ClapTrap	&operator=( ClapTrap &other );
 		
