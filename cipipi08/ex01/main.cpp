@@ -5,28 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 20:47:32 by hbettal           #+#    #+#             */
-/*   Updated: 2025/02/25 15:34:43 by hbettal          ###   ########.fr       */
+/*   Created: 2025/02/22 16:01:03 by hbettal           #+#    #+#             */
+/*   Updated: 2025/02/22 16:42:52 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Span.hpp"
+#include <exception>
 #include <iostream>
-#include "Array.hpp"
-
 int main()
 {
     try
     {
-        Array<int> arr(5);
-        for (unsigned int i = 0; i < arr.size(); i++)
-            arr[i] = i;
-        for (unsigned int i = 0; i < arr.size(); i++)
-            std::cout << arr[i] << std::endl;
-        arr[6] = 42;
+        Span sp = Span(5);
+        sp.addNumber(6);
+        sp.addNumber(3);
+        sp.addNumber(17);
+        sp.addNumber(9);
+        sp.addNumber(11);
+        std::cout << sp.shortestSpan() << std::endl;
+        std::cout << sp.longestSpan() << std::endl;
     }
-    catch(const std::exception &e)
+    catch (std::exception &e)
     {
-        std::cerr << e.what() << std::endl;
+        std::cout << e.what() << std::endl;
     }
     return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 22:32:15 by hbettal           #+#    #+#             */
-/*   Updated: 2025/02/19 08:20:53 by hbettal          ###   ########.fr       */
+/*   Updated: 2025/02/19 08:24:52 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 int main()
 {
-	ClapTrap *s = new ScavTrap("Jotaro");
-			
+	ScavTrap *s = new ScavTrap("Jotaro");
 	delete s;
 }

@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/16 15:35:48 by hbettal           #+#    #+#             */
-/*   Updated: 2025/02/24 15:35:39 by hbettal          ###   ########.fr       */
+/*   Created: 2025/02/22 15:03:02 by hbettal           #+#    #+#             */
+/*   Updated: 2025/02/22 15:14:19 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "easyfind.hpp"
+#include <vector>
 
-#include <iostream>
-
-template <typename T> void swap(T &a, T &b)
+int main()
 {
-    T tmp = a;
-    a = b;
-    b = tmp;
-}
-
-template <typename T> T max(T a, T b)
-{
-    return ((a > b) ? a : b);
-}
-
-template <typename T> T min(T a, T b)
-{
-    return ((a < b) ? a : b);
+    try
+    {
+        std::vector<int> v;
+        v.push_back(1);
+        v.push_back(2);
+        v.push_back(3);
+        v.push_back(4);
+        v.push_back(100);
+        easyfind(v, 3);
+        easyfind(v, 100);
+        easyfind(v, 6);
+    }
+    catch (std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+    return 0;
 }

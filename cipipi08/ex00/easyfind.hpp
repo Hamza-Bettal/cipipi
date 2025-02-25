@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbettal <hbettal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/16 15:35:48 by hbettal           #+#    #+#             */
-/*   Updated: 2025/02/24 15:35:39 by hbettal          ###   ########.fr       */
+/*   Created: 2025/02/21 13:28:43 by hbettal           #+#    #+#             */
+/*   Updated: 2025/02/22 15:19:38 by hbettal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,11 @@
 
 #include <iostream>
 
-template <typename T> void swap(T &a, T &b)
+template <typename T>
+void easyfind(T data, int N)
 {
-    T tmp = a;
-    a = b;
-    b = tmp;
-}
-
-template <typename T> T max(T a, T b)
-{
-    return ((a > b) ? a : b);
-}
-
-template <typename T> T min(T a, T b)
-{
-    return ((a < b) ? a : b);
+    if (std::find(data.begin(), data.end(), N) != data.end())
+        std::cout << "Found" << std::endl;
+    else
+        throw std::out_of_range("Not found");
 }
